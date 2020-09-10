@@ -15,12 +15,13 @@ const userSchema = mongoose.Schema({
     type: String,
     maxlength: 50,
   },
-  // 회원 권한
+  // 어드민 권한
   role: {
     type: Number,
     defalut: 0,
   },
-  image: String, // 이렇게 하나만 적을 수 있다.
+  //
+  image: String, // 이렇게 하나만 적을 수도 있다.
   // 유효성 관리
   token: {
     type: String,
