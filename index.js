@@ -3,6 +3,7 @@ const app = express();
 const port = 5000;
 const bodyParser = require('body-parser');
 const { User } = require('./models/User');
+const config = require('./config/key');
 
 // bodyParser가 client의 정보를 서버로 분석하여 가져올 수 있게 설정해주는 코드
 // application/x-www-form-urlencoded
@@ -15,7 +16,7 @@ app.use(bodyParser.json());
 const mongoose = require('mongoose');
 mongoose
   .connect(
-    'mongodb+srv://noneno:dhWhfkrnd1%21@boilerplate.r3qet.mongodb.net/boilerplate?retryWrites=true&w=majority',
+    config.mongoURI,
     // 두 번째 인자로 아래 객체를 넣는다. 에러 방지용
     {
       useNewUrlParser: true,
